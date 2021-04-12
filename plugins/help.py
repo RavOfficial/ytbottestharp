@@ -1,4 +1,5 @@
 from pyrogram import Client, Filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
 @Client.on_message(Filters.command(["help"]))
