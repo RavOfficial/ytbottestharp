@@ -3,5 +3,18 @@ from pyrogram import Client, Filters
 
 @Client.on_message(Filters.command(["help"]))
 async def start(client, message):
-    helptxt = f"<b>🔸 First send youtube video link.\n\n🔸 Then Select video format and video quality.\n\n🔸 Now wait, I will upload video to telegram.\n\n🔹 Youtube playlists are not supported</b>"
+    helptxt ="""<b>About Youtube Downloader Bot!</b>
+<b>Creator:</b> <a href="https://t.me/HARP_Tech">HARP Tech 🇱🇰</a>
+<b>Get a help by contacting us:</b> <a href="https://t.me/HARP_Chat">HARP Tech's official support group</a>
+<b>Join now with us @HARP_Chat 🇱🇰</b>""",
+     reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Back", callback_data="help"),
+                                        InlineKeyboardButton(
+                                            "Join now! 🇱🇰 ", url="https://t.me/HARP_Tech")
+                                    ]]
+                            ),        
+            disable_web_page_preview=True,        
+            parse_mode="html")
     await message.reply_text(helptxt)
